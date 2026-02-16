@@ -1,0 +1,116 @@
+fieldset {
+  margin: 0;
+  border: 1px solid #808080;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+  transition: border ease-in 200ms;
+}
+fieldset:hover {
+  border: 1px solid #000;
+}
+fieldset > legend {
+  text-align: left;
+}
+fieldset label {
+  cursor: pointer;
+}
+.snackbar {
+  margin: 0 auto;
+  width: 360px;
+}
+.delay-label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  gap: 8px;
+
+  margin-bottom: 16px;
+}
+.input-delay {
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 16px;
+
+  color: #2e2f42;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+
+  width: 326px;
+  padding: 8px 16px;
+
+  transition: border ease-in 200ms;
+}
+.input-delay:hover {
+  border: 1px solid #000;
+}
+.input-delay:focus {
+  border: 1px solid #4e75ff;
+}
+.input-state {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #8e8f99;
+  border-radius: 50%;
+  margin: 0;
+  margin-right: 8px;
+  display: inline-grid;
+  place-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input-state::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.input-state:checked {
+  border-color: #4d5ae5;
+}
+
+.input-state:checked::before {
+  transform: scale(1);
+}
+.submit-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  border: none;
+  outline: none;
+
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 32px;
+  width: 100%;
+
+  background-color: #4e75ff;
+
+  transition: transform ease-in 100ms;
+}
+.submit-btn:hover,
+.submit-btn:active {
+  background-color: #6c8cff;
+}
+.submit-btn:active {
+  transform: scale(0.96);
+}
