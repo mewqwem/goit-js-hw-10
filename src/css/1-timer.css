@@ -47,7 +47,7 @@
 .timer-wrapper button:hover {
   background-color: #6c8cff;
 }
-.timer-wrapper button.disabled {
+.timer-wrapper button:disabled {
   color: #989898;
   background-color: #dcdcdc;
   cursor: not-allowed;

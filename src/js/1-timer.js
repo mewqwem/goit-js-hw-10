@@ -7,6 +7,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const startBtn = document.querySelector('#timer-start-btn');
 let userSelectedDate = null;
 let timerId = null;
+startBtn.disabled = true;
 
 //! refs
 const refs = {
@@ -34,14 +35,11 @@ const options = {
         iconColor: '#fff',
         color: '#fff',
       });
-      startBtn.classList.add('disabled');
       return;
     }
-    startBtn.classList.remove('disabled');
+    startBtn.disabled = false;
 
     userSelectedDate = selectedDates[0];
-
-    console.log(selectedDates[0]);
   },
 };
 
@@ -82,12 +80,15 @@ startBtn.addEventListener('click', () => {
     const currentTime = new Date();
     const deltaTime = userSelectedDate - currentTime;
 
-    startBtn.classList.add('disabled');
-    refs.input.classList.add('disabled');
+    startBtn.disabled = true;
+    refs.input.disabled = true;
 
     if (deltaTime <= 0) {
       clearInterval(timerId);
       resetTimerInterface({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+      refs.input.disabled = false;
+
       iziToast.success({
         title: 'Success',
         message: 'Timer has finished!',
